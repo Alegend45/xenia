@@ -27,6 +27,8 @@ public:
       IDXGIFactory1* dxgi_factory, ID3D11Device* device);
   virtual ~D3D11Window();
 
+  IDXGISwapChain* swap_chain() const { return swap_chain_; }
+
   void Swap();
 
 protected:

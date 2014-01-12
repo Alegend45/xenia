@@ -189,8 +189,7 @@ int D3D11VertexShader::Prepare(xe_gpu_program_cntl_t* program_cntl) {
       (D3D11_INPUT_ELEMENT_DESC*)xe_alloca(
           sizeof(D3D11_INPUT_ELEMENT_DESC) * element_count);
   int n = 0;
-  for (std::vector<instr_fetch_vtx_t>::iterator it = fetch_vtxs_.begin();
-       it != fetch_vtxs_.end(); ++it, ++n) {
+  for (auto it = fetch_vtxs_.begin(); it != fetch_vtxs_.end(); ++it, ++n) {
     const instr_fetch_vtx_t& vtx = *it;
     DXGI_FORMAT vtx_format;
     switch (vtx.format) {
